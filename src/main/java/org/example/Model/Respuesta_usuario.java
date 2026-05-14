@@ -15,6 +15,7 @@ public class Respuesta_usuario {
         return id_respuesta;
     }
 
+
     public void setId_respuesta(int id_respuesta) {
         this.id_respuesta = id_respuesta;
     }
