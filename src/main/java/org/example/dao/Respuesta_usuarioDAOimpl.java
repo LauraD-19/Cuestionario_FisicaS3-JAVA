@@ -1,4 +1,4 @@
 package org.example.dao;
 
-public class Respuesta_usuarioDAOimpl {
+public class Respuesta_usuarioDAOimpl implements Respuesta_usuarioDAO{
 }
