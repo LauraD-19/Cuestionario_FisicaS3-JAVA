@@ -7,10 +7,10 @@ import java.util.List;
 
 public class PreguntasDAOimpl implements PreguntasDAO {
 
-    private Connection conn;
+    private Connection connection;
 
     public PreguntasDAOimpl(Connection conn) {
-        this.conn = conn;
+        this.connection = connection;
     }
 
     @Override
@@ -20,7 +20,7 @@ public class PreguntasDAOimpl implements PreguntasDAO {
         String sql = "SELECT * FROM Preguntas";
 
         try {
-            PreparedStatement ps = conn.prepareStatement(sql);
+            PreparedStatement ps = connection.prepareStatement(sql);
             ResultSet rs = ps.executeQuery();
 
             while (rs.next()) {
@@ -34,7 +34,6 @@ public class PreguntasDAOimpl implements PreguntasDAO {
                 p.setOpcionD(rs.getString("opcion_d"));
                 p.setRespuestaCorrecta(rs.getString("respuesta_correcta"));
 
-                // 👇 LO NUEVO (explicación)
                 p.setExplicacion(rs.getString("explicacion"));
 
                 lista.add(p);
