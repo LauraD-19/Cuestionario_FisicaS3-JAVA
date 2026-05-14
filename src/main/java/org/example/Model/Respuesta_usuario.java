@@ -14,7 +14,7 @@ public class Respuesta_usuario {
     public int getId_respuesta() {
         return id_respuesta;
     }
-
+//AA
 
     public void setId_respuesta(int id_respuesta) {
         this.id_respuesta = id_respuesta;
