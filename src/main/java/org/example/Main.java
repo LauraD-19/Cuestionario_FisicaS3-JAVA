@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-
+        //menu
         try (Connection connection=ConexionBD.obtenerConexion()){
             PreguntasDAO dao = new PreguntasDAOimpl(connection);
             List<Preguntas> preguntas = dao.listar();
