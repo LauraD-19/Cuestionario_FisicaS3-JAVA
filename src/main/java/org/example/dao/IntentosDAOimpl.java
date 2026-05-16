@@ -1,12 +1,7 @@
 package org.example.dao;
 
-<<<<<<< HEAD
-public class IntentosDAOimpl {
-
-
-=======
 import org.example.Model.Intentos;
-import org.example.Model.Usuarios;
+import java.sql.Statement;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -24,13 +19,33 @@ public class IntentosDAOimpl implements IntentosDAO{
         String sql = "INSERT INTO Intentos" +
                 "(usuario_id, nota) " +
                 "VALUES (?, ?)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)){
+        try (PreparedStatement statement = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)){
             statement.setInt(1, intentos.getUsuario_id());
             statement.setDouble(2, intentos.getNota());
+            statement.executeUpdate();
+            ResultSet keys = statement.getGeneratedKeys();
+            if(keys.next()){
+                intentos.setId_intento(keys.getInt(1));
+            }
+
         } catch (Exception e) {
             e.printStackTrace();
         }
 
+    }
+
+    @Override
+    public void actualizarNota(int id_intento, double nota) {
+        String sql = "UPDATE Intentos SET nota=? WHERE id_intento=?";
+
+        try(PreparedStatement statement= connection.prepareStatement(sql)){
+            statement.setDouble(1, nota);
+            statement.setInt(2, id_intento);
+            statement.executeUpdate();
+
+        }catch (SQLException e){
+            e.printStackTrace();
+        }
     }
 
     @Override
@@ -72,5 +87,4 @@ public class IntentosDAOimpl implements IntentosDAO{
         }
         return intentosList;
     }
->>>>>>> 8544b91435a385cebda00b9f999131636f23954f
 }

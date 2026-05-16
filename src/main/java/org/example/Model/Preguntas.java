@@ -3,12 +3,26 @@ package org.example.Model;
 public class Preguntas {
     private int id_preguntas;
     private String enunciado;
-    private String opcionA;
-    private String opcionB;
-    private String opcionC;
-    private String opcionD;
-    private String respuestaCorrecta;
-    private String explicacion; // 👈 NUEVO
+    private String opcion_a;
+    private String opcion_b;
+    private String opcion_c;
+    private String opcion_d;
+    private String respuesta_correcta;
+    private String explicacion;
+
+    public Preguntas() {
+    }
+
+    public Preguntas(int id_preguntas, String enunciado, String opcion_a, String opcion_b, String opcion_c, String opcion_d, String respuesta_correcta, String explicacion) {
+        this.id_preguntas=id_preguntas;
+        this.enunciado = enunciado;
+        this.opcion_a = opcion_a;
+        this.opcion_b = opcion_b;
+        this.opcion_c = opcion_c;
+        this.opcion_d = opcion_d;
+        this.respuesta_correcta = respuesta_correcta;
+        this.explicacion = explicacion;
+    }
 
     public int getId_preguntas() {
         return id_preguntas;
@@ -26,52 +40,65 @@ public class Preguntas {
         this.enunciado = enunciado;
     }
 
-    public String getOpcionA() {
-        return opcionA;
+    public String getOpcion_a() {
+        return opcion_a;
     }
 
-    public void setOpcionA(String opcionA) {
-        this.opcionA = opcionA;
+    public void setOpcion_a(String opcion_a) {
+        this.opcion_a = opcion_a;
     }
 
-    public String getOpcionB() {
-        return opcionB;
+    public String getOpcion_b() {
+        return opcion_b;
     }
 
-    public void setOpcionB(String opcionB) {
-        this.opcionB = opcionB;
+    public void setOpcion_b(String opcion_b) {
+        this.opcion_b = opcion_b;
     }
 
-    public String getOpcionC() {
-        return opcionC;
+    public String getOpcion_c() {
+        return opcion_c;
     }
 
-    public void setOpcionC(String opcionC) {
-        this.opcionC = opcionC;
+    public void setOpcion_c(String opcion_c) {
+        this.opcion_c = opcion_c;
     }
 
-    public String getOpcionD() {
-        return opcionD;
+    public String getOpcion_d() {
+        return opcion_d;
     }
 
-    public void setOpcionD(String opcionD) {
-        this.opcionD = opcionD;
+    public void setOpcion_d(String opcion_d) {
+        this.opcion_d = opcion_d;
     }
 
-    public String getRespuestaCorrecta() {
-        return respuestaCorrecta;
+    public String getRespuesta_correcta() {
+        return respuesta_correcta;
     }
 
-    public void setRespuestaCorrecta(String respuestaCorrecta) {
-        this.respuestaCorrecta = respuestaCorrecta;
+    public void setRespuesta_correcta(String respuesta_correcta) {
+        this.respuesta_correcta = respuesta_correcta;
     }
 
-    // 👇 NUEVO
     public String getExplicacion() {
         return explicacion;
     }
 
     public void setExplicacion(String explicacion) {
         this.explicacion = explicacion;
+    }
+
+    @Override
+    public String toString() {
+        return "Preguntas{" +
+                "id_preguntas=" + id_preguntas +
+                ", enunciado='" + enunciado + '\'' +
+                ", opcion_a='" + opcion_a + '\'' +
+                ", opcion_b='" + opcion_b + '\'' +
+                ", opcion_c='" + opcion_c + '\'' +
+                ", opcion_d='" + opcion_d + '\'' +
+                ", respuesta_correcta='" + respuesta_correcta + '\'' +
+                ", explicacion='" + explicacion + '\'' +
+                '}';
     }
 }

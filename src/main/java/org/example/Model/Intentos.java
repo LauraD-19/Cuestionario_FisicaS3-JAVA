@@ -8,9 +8,9 @@ public class Intentos {
     public Intentos() {
     }
 
-    public Intentos(double nota, int usuario_id) {
-        this.nota = nota;
+    public Intentos(int usuario_id, double nota) {
         this.usuario_id = usuario_id;
+        this.nota = nota;
     }
 
     public Intentos(int id_intento, int usuario_id, double nota) {

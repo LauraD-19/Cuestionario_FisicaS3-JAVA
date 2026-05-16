@@ -3,7 +3,7 @@ package org.example.Util;
 import java.sql.*;
 
 public class ConexionBD {
-    private static final String URL = "jdbc:mysql://localhost:3317/staff";
+    private static final String URL = "jdbc:mysql://localhost:3317/staff?useUnicode=true&characterEncoding=UTF-8";//para mostrar todos los caracteres
     private static final String USUARIO = "root";
     private static final String CONTRASENA = "1234";
 
