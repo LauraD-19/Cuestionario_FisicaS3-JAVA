@@ -28,12 +28,10 @@ public class Main {
             System.out.println("Bienvenidos al cuestionario de fisica...ʕ•́ᴥ•̀ʔっ...");
             do {
                 System.out.println("seleccione una de las siguientes opciones:");
-                System.out.println("1.crear");
-                System.out.println("2.listar usuarios");
-                System.out.println("3.buscar usuarios");
-                System.out.println("4.salir");
-                System.out.println("5 ver preguntas");
-                System.out.println("6 modificar");
+                System.out.println("1.Crear usuario y responder cuestionario");
+                System.out.println("2.Listar usuarios");
+                System.out.println("3.Buscar usuarios");
+                System.out.println("4.Salir");
                 op= scanner.nextInt();
                 scanner.nextLine();
 
@@ -59,7 +57,7 @@ public class Main {
                         //nota
                         int correctas=0;
                         System.out.println("\n");
-                        System.out.println("A continuación las preguntas del quiz");
+                        System.out.println("A continuación las preguntas del cuestionario");
                         System.out.println("Recuerda que solo tienes un intento");
                         System.out.println("Te deseamos exitos :)");
 
@@ -113,7 +111,7 @@ public class Main {
                                 System.out.println("ID: " + u.id);
                                 System.out.println("Nombre: " + u.nombre);
                                 System.out.println("Apellido: " + u.apellido);
-                                System.out.println("Email: " + u.correo);
+                                System.out.println("Correo: " + u.correo);
                                 System.out.println("Nota: " + u.nota);
                             }
                             System.out.println("----------------------");
@@ -127,102 +125,13 @@ public class Main {
                         if(usuarios1!=null){
                             System.out.println(usuarios1);
                         }else{
-                            System.out.println("usuario no encontrado");
+                            System.out.println("Usuario no encontrado...");
                         }
                         break;
 
                     case 4://salida
                         System.out.println("Saliendo...");
                         System.out.println("Que tenga buen día ʕ•́ᴥ•̀ʔっ ...");
-                        break;
-
-                    case 5:
-
-                        List<Preguntas> listaPreguntas =
-                                preguntasDAO.listar();
-
-                        for(Preguntas p : listaPreguntas){
-
-                            System.out.println("\n------------------");
-
-                            System.out.println("ID: "
-                                    + p.getId_preguntas());
-
-                            System.out.println("Pregunta: "
-                                    + p.getEnunciado());
-
-                            System.out.println("Respuesta correcta: "
-                                    + p.getRespuesta_correcta());
-
-                            System.out.println("A) "
-                                    + p.getOpcion_a());
-
-                            System.out.println("B) "
-                                    + p.getOpcion_b());
-
-                            System.out.println("C) "
-                                    + p.getOpcion_c());
-
-                            System.out.println("D) "
-                                    + p.getOpcion_d());
-
-                            System.out.println("Explicación: "
-                                    + p.getExplicacion());
-
-                            System.out.println("------------------");
-                        }
-
-                        break;
-
-                    case 6:
-                        System.out.println("ID de la pregunta:");
-                        int pregunta_id = scanner.nextInt();
-                        scanner.nextLine();
-
-                        Preguntas pregunta =
-                                preguntasDAO.leer(pregunta_id);
-
-                        if(pregunta != null){
-
-                            System.out.println("Nuevo enunciado:");
-                            pregunta.setEnunciado(
-                                    scanner.nextLine());
-
-                            System.out.println("Respuesta correcta:");
-                            pregunta.setRespuesta_correcta(
-                                    scanner.nextLine());
-
-                            System.out.println("Nueva opcion A:");
-                            pregunta.setOpcion_a(
-                                    scanner.nextLine());
-
-                            System.out.println("Nueva opcion B:");
-                            pregunta.setOpcion_b(
-                                    scanner.nextLine());
-
-                            System.out.println("Nueva opcion C:");
-                            pregunta.setOpcion_c(
-                                    scanner.nextLine());
-
-                            System.out.println("Nueva opcion D:");
-                            pregunta.setOpcion_d(
-                                    scanner.nextLine());
-
-                            System.out.println("Nueva explicación:");
-                            pregunta.setExplicacion(
-                                    scanner.nextLine());
-
-                            System.out.println(
-                                    pregunta.getId_preguntas()
-                            );
-                            preguntasDAO.actualizar(pregunta);
-
-                        } else {
-
-                            System.out.println(
-                                    "Pregunta no encontrada"
-                            );
-                        }
 
                         break;
                     default:
